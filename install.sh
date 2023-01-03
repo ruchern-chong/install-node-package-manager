@@ -14,7 +14,7 @@ else
 	if node --version ge 16.0.0 &> /dev/null;
 	then
 		while true; do
-		read -r -p "Node v16 detected. Use corepack (recommended) to install the package managers? [Y/n] " corepack
+		read -r -p "Node v16 detected. Use corepack (recommended) to install the package managers? [Y/n] " corepack < /dev/tty
 		# Setting the default value to Y here since corepack is recommended to be used for installing the package managers starting from Node v16.
 		corepack=${corepack:=Y}
 			case $corepack in
@@ -31,8 +31,8 @@ else
 	fi
 	# Display a selection menu for the users to install the node package managers of their choice.
 	# Since npm is already installed, this is temporarily removed from the menu.
-	echo "Select the package manager you want to install. [yarn/pnpm] "
-	select pkgmgr in "yarn" "pnpm"; do
+	while true; do
+	read -r -p "Select the package manager you want to install. [yarn/pnpm] " pkgmgr < /dev/tty
 		case $pkgmgr in
 			# npm ) 
 			# 	echo "Installing npm";
