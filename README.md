@@ -13,4 +13,6 @@ Currently, the node package manager supports:
 
 ## OTA Installation
 
+```bash
 curl -L https://raw.githubusercontent.com/ruchernchong/install-node-package-manager/main/install.sh | bash
+```
