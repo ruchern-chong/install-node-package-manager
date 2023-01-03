@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/bin/bash
 
 USE_COREPACK=false
 
